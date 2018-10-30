@@ -1,0 +1,49 @@
+http://blog.praveendeshmane.co.in/index.jsp   must refer for the problems
+first of all download the tar file for the kafka
+	http://mirrors.wuchna.com/apachemirror/kafka/2.0.0/kafka_2.12-2.0.0.tgz
+use binary download for the download
+goto the downloads foolder and untar the file
+	kafka folder will be obtain 
+goto the terminal and type the code
+	cd Downloads;
+	sudo mv (kafka folder obtain) kafka
+	sudo mv kafka /usr/local/kafka	
+	sudo chmod -R 777 /usr/local/kafka
+	sudo chown -R ripudaman(username before @) /usr/local/kafka
+kafka is almost install
+
+BASICS function
+cd /usr/local/kafka
+	START THE ZOOKEEPER
+		./bin/zookeeper-server-start.sh config/zookeeper.properties
+	START THE KAFKA SERVER
+		./bin/kafka-server-start.sh config/server.properties
+	CREATING THE TOPIC
+		./bin/kafka-topics.sh  --zookeeper localhost:2181 --create --topic ripu --partitions 2 replication-factor 1
+	STARTING CONSOLE PRODUCER
+  		./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic ripu		
+	STARTING CONSOLE CONSUMER
+		./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic ripu
+
+now what you type at the producer console that will be appear at the consumer console
+
+
+
+installation for sbt for the kafka
+
+open the terminal and use the following code
+* use one of the * with the code that maching with your error when you do sudo apt-get update after 1 line
+or refer the page 	https://itsfoss.com/fix-update-errors-ubuntu-1404/
+
+		echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+		*sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+		*sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 68980A0EA10B4DE8
+		sudo apt-get update
+		sudo apt-get install sbt
+
+
+now make directory
+mkdir kakka
+cd kafka
+sbt it will take a time to install all the update
+		

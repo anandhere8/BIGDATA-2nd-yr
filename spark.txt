@@ -1,0 +1,30 @@
+Here  we discuss about the stand alone installation of spark
+with SCALA
+
+1> installing scala
+	sudo apt-get install scala
+2> download the tar for spark
+	http://www-eu.apache.org/dist/spark/spark-2.3.2/spark-2.3.2-bin-hadoop2.7.tgz
+
+3> goto the Download folder an untar the tar file you downloaded
+
+4> moving and rename the folder obtained after untaring
+	 sudo mv spark-2.3.0(folder obtain) spark
+	 sudo mv spark /usr/local/spark
+	 sudo chmod 777  /usr/local/spark
+	 sudo chown -R ripu502(username) /usr/local/spark
+
+5> create key
+	 ssh-keygen -t rsa -P ""
+	 press ENTER
+	 (press y if necessary)	
+	 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+
+6>  nano .bashrc
+	paste these line at the end of the .bashrc
+	 #Export spark	
+	export SPARK_HOME=/usr/local/spark
+	export PATH=$PATH:$SPARK_HOME/bin
+	export PATH=$PATH:$SPARK_HOME/sbin
+   save and exit
+7> source .bashrc	
