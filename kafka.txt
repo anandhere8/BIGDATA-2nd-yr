@@ -19,7 +19,7 @@ cd /usr/local/kafka
 	START THE KAFKA SERVER
 		./bin/kafka-server-start.sh config/server.properties
 	CREATING THE TOPIC
-		./bin/kafka-topics.sh  --zookeeper localhost:2181 --create --topic ripu --partitions 2 replication-factor 1
+		./bin/kafka-topics.sh  --zookeeper localhost:2181 --create --topic ripu --partitions 2 --replication-factor 1
 	STARTING CONSOLE PRODUCER
   		./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic ripu		
 	STARTING CONSOLE CONSUMER
