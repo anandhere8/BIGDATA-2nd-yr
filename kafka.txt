@@ -15,9 +15,9 @@ kafka is almost install
 BASICS function
 cd /usr/local/kafka
 	START THE ZOOKEEPER
-		./bin/zookeeper-server-start.sh config/zookeeper.properties
+		cd /usr/local/kafka;./bin/zookeeper-server-start.sh config/zookeeper.properties
 	START THE KAFKA SERVER
-		./bin/kafka-server-start.sh config/server.properties
+		cd /usr/local/kafka;./bin/kafka-server-start.sh config/server.properties
 	CREATING THE TOPIC
 		./bin/kafka-topics.sh  --zookeeper localhost:2181 --create --topic ripu --partitions 2 --replication-factor 1
 	STARTING CONSOLE PRODUCER
